@@ -1,0 +1,64 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
+    <h:head>
+        <title>Welcome to Currency Converter</title>
+    </h:head>
+    <h:body>
+        <h1>Welcome to the Currency Converter</h1>
+        <h2>Conversion Result:</h2>
+        <p> <h:outputLabel for="convResult" 
+                          rendered="#{converter.showConvert}"  
+                          value="Conversion Result: "/>
+            <h:outputText id="convResult" 
+                          rendered="#{converter.showConvert}"
+                          value="#{converter.convResult} in foreign currency"/>
+            <h:outputText rendered="#{!converter.showConvert}"  
+                          value="No conversion started"/>
+        </p>
+        <f:view>
+            <h:form >
+                <p><h3>Conversion Rate:</h3>
+                    <h:outputText rendered="#{converter.rateDone}" 
+                                  value="The change is #{converter.rate} from 
+                                  #{converter.homeCurrency} to 
+                                  #{converter.foreignCurrency}"/>
+                    <h:outputText rendered="#{!converter.rateDone}" 
+                                  value="No conversion rate to show"/>
+                </p>
+                <p><h3>Select conversion</h3>
+                    <h:selectOneMenu id="homeCurrency" value="#{converter.homeCurrency}">
+                        <f:selectItem itemLabel="SEK" itemValue="SEK"/>
+                        <f:selectItem itemLabel="EURO" itemValue="EURO"/>
+                        <f:selectItem itemLabel="DOLLAR" itemValue="DOLLAR"/>
+                        <f:selectItem itemLabel="POUNDS" itemValue="POUNDS"/> 
+                    </h:selectOneMenu>
+                </p>
+                <p>
+                    <h:selectOneMenu id="foreignCurrency" value="#{converter.foreignCurrency}">
+                        <f:selectItem itemLabel="SEK" itemValue="SEK"/>
+                        <f:selectItem itemLabel="EURO" itemValue="EURO"/>
+                        <f:selectItem itemLabel="DOLLAR" itemValue="DOLLAR"/>
+                        <f:selectItem itemLabel="POUNDS" itemValue="POUNDS"/> 
+                    </h:selectOneMenu>
+                </p>
+                <p>
+                    <h:commandButton value="Show Rate" action="#{converter.findRates}"/>                
+                </p>
+                <p>
+                    <h3>Money to Convert</h3>
+                    <h:outputLabel for="money" value="Money to convert:"/>
+                    <h:inputText id="money" value="#{converter.money}"/>
+                </p>
+                <p>
+                    <h:commandButton value="Convert" action="#{converter.convert}"/>
+                </p>
+                    
+            </h:form>
+        </f:view>
+
+    </h:body>
+</html>
+

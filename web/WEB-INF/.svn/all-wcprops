@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/HM1/!svn/ver/59/currencyConverter/web/WEB-INF
+END
+faces-config.xml
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/HM1/!svn/ver/59/currencyConverter/web/WEB-INF/faces-config.xml
+END
+beans.xml
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/HM1/!svn/ver/58/currencyConverter/web/WEB-INF/beans.xml
+END
+web.xml
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/HM1/!svn/ver/58/currencyConverter/web/WEB-INF/web.xml
+END
