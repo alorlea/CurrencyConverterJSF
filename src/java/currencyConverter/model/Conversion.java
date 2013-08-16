@@ -12,7 +12,7 @@ import javax.persistence.Id;
 
 /**
  *
- * @author alberto
+ * @author Alberto Lorente Leal <albll@kth.se>, <a.lorenteleal@gmail.com>
  */
 @Entity
 public class Conversion implements Serializable , IConversion {
